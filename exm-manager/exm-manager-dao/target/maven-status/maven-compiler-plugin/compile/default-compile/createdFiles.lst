@@ -1,0 +1,9 @@
+com\exm\dao\CollegeDao.class
+com\exm\dao\CourseDao.class
+com\exm\dao\SelectedCourseCustomDao.class
+com\exm\dao\RoleDao.class
+com\exm\dao\UserDao.class
+com\exm\dao\RolePermissionDao.class
+com\exm\dao\StudentDao.class
+com\exm\dao\SelectedCourseDao.class
+com\exm\dao\TeacherDao.class

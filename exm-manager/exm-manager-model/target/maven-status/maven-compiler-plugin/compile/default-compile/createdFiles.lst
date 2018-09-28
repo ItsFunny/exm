@@ -1,0 +1,10 @@
+com\exm\model\College.class
+com\exm\model\RolePermission.class
+com\exm\model\Selectedcourse.class
+com\exm\model\Role.class
+com\exm\model\Student.class
+com\exm\model\Teacher.class
+com\exm\model\Course.class
+com\exm\model\PageVo.class
+com\exm\model\SelectedCourseCustom.class
+com\exm\model\User.class

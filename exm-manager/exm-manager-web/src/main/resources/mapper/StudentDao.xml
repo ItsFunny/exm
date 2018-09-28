@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.exm.dao.StudentDao">
+
+	<!-- <update id="updateStudent" parameterType="com.exm.model.Student"> update 
+		student set <if test="studentName!=null">student_name=#{studentName},</if> 
+		<if test="sex!=null">sex=#{sex}</if> <if test="birthYear!=null">birth_year=#{birthYear},</if> 
+		<if test="grade!=null">grade=#{grade},</if> <if test="college_id!=null">college_id=#{collegeId}</if> 
+		</update> -->
+
+
+<!-- 	<insert id="addStudent" parameterType="com.exm.model.Student">
+		insert into student (user_id,student_name,sex,birth_year,grade,college_id) values (
+		<if test="userId!=null">#{userId},</if>
+		<if test="studentName!=null">#{studentName},</if>
+		<if test="sex!=null">#{sex},</if>
+		<if test="birthYear!=null">#{birthYear},</if>
+		<if test="grade!=null">#{grade},</if>
+		<if test="collegeId!=null">#{collegeId}</if>
+		)
+	</insert>  -->
+</mapper>

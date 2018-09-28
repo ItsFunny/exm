@@ -1,0 +1,30 @@
+<html>
+
+<div class="col-md-2">
+	 <script>
+      ##	alert("云服务器上没有搭建相关的配置,所以课程搜索那是没用的");
+      	 
+    </script>
+
+
+
+    <ul class="nav nav-pills nav-stacked" id="nav">
+    #foreach($permission in $permissions)
+    	#if($permission.url)
+    	<li><a href="${permission.url}">${permission.resource}<span class="badge pull-right"></span></a></li>
+    	#end
+    #end
+        <li><a href="/change/pwd">修改密码<sapn class="glyphicon glyphicon-repeat pull-right" /></a></li>
+        <li><a href="/user/change/pwd">修改用户密码<sapn class="glyphicon glyphicon-pencil pull-right" /></a></li>
+        <li><a href="/logout">退出系统<sapn class="glyphicon glyphicon-log-out pull-right" /></a></li>
+        <li class="disabled"><a href="##">Responsive</a></li>
+    </ul>
+    
+    
+    
+    
+    
+    
+</div>
+
+</html>

@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>课程信息显示</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 引入bootstrap -->
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	<!-- 引入JQuery  bootstrap.js-->
+	<script src="/js/jquery-3.2.1.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+
+	<%--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">--%>
+
+</head>
+<body>
+	<!-- 顶栏 -->
+	#parse("top.vm")
+	<!-- 中间主体 -->
+	<div class="container" id="content">
+		<div class="row">
+			<jsp:include page="menu.jsp"></jsp:include>
+			<div class="col-md-10">
+				<div class="panel panel-default">
+				    <div class="panel-heading">
+						<div class="row">
+					    	<h1 class="col-md-5">已选该课程学生名单</h1>
+						</div>
+				    </div>
+				    <table class="table table-bordered">
+					        <thead>
+					            <tr>
+									<th>学号</th>
+									<th>姓名</th>
+									<th>分数</th>
+									<th>操作</th>
+					            </tr>
+					        </thead>
+					        <tbody>
+								#foreach($grade in ${pageModel.data})
+									<tr>
+										<td>${grade.studentId}</td>
+										<td>${grade.studentName}</td>
+										#if(!${grade.mark})
+											<td>未打分</td>
+											<td>
+												<button class="btn btn-default btn-xs btn-info" onClick="location.href='/teacher/class/mark?studentId=${grade.studentId}&courseId=${grade.courseId}&redirect=${redirect}'">打分</button>
+											</td>
+										#else
+											<td>${grade.mark}</td>
+											<td>已打分</td>
+										#end
+									</tr>
+								#end	
+							
+					        </tbody>
+				    </table>
+				      #parse("page.vm")
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="container" id="footer">
+		<div class="row">
+			<div class="col-md-12"></div>
+		</div>
+	</div>
+</body>
+	<script type="text/javascript">
+		<%--设置菜单中--%>
+		$("#nav li:nth-child(1)").addClass("active")
+        if (${pagingVO.curentPageNo} == ${pagingVO.totalCount}) {
+            $(".pagination li:last-child").addClass("disabled")
+        };
+
+        if (${pagingVO.curentPageNo} == ${1}) {
+            $(".pagination li:nth-child(1)").addClass("disabled")
+        };
+        </c:if>
+
+        function confirmd() {
+            var msg = "您真的确定要删除吗？！";
+            if (confirm(msg)==true){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        $("#sub").click(function () {
+            $("#form1").submit();
+        });
+	</script>
+</html>
